@@ -1,0 +1,45 @@
+# Node.js dependencies
+node_modules/
+
+# Build output
+build/
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE/Editor files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Optional npm cache directory
+.npm/
+
+# Test coverage
+coverage/
+
+# Next.js build
+.next/
+
+# Yarn Integrity file
+.yarn-integrity
+
+# JetBrains IDE files
+.idea/
+
+# npm package lock files (if you use yarn, keep this)
+package-lock.json
+
