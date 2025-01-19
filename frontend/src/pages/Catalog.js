@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Card, CardContent, CardMedia, Typography, Grid, Button } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
+import { PlusOne, ShoppingBasket } from '@mui/icons-material';
 
 const Catalog = () => {
     const [products, setProducts] = useState([]);
@@ -25,34 +26,34 @@ const Catalog = () => {
     const handlePreviousPage = () => setPage((prevPage) => Math.max(prevPage - 1, 1));
 
     return (
-        <div style={{ padding: '20px' }}>
-            <Typography variant="h4" gutterBottom>
+        <div className="p-4 bg-gray-100">
+            <Typography variant="h4" gutterBottom className="mb-6 text-center">
                 Product Catalog
             </Typography>
-            <Grid container spacing={3}>
+            
+            {/* Responsive Grid with 4 items per row on larger screens, 2 items on smaller screens */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full max-w-screen-xl mx-auto">
                 {products.map((product) => (
-                    <Grid item xs={12} sm={6} md={4} key={product.id}>
-                        <Card>
+                    <div key={product.id} className="flex justify-center">
+                        <Card className="w-full max-w-xs h-100">
                             <CardMedia
                                 component="img"
-                                height="140"
-                                image={`${product.image}`}
+                                image={product.image}
                                 alt={product.name}
+                                className="h-48 w-full object-contain"
                             />
-                            <CardContent>
-                                <Typography variant="h6">{product.name}</Typography>
-                                <Typography variant="body2" color="textSecondary">
-                                    {product.description}
-                                </Typography>
-                                <Typography variant="body1" color="primary">
-                                    ${product.price}
-                                </Typography>
+                            <CardContent className="p-4">
+                                <Typography variant="h6" className="font-semibold text-gray-800">{product.name}</Typography>
+                                <Typography variant="body2" color="textSecondary" className="text-gray-600 mt-2">{product.description}</Typography>
+                                <Typography variant="body1" color="primary" className="mt-3 font-semibold">${product.price}</Typography>
                             </CardContent>
+                            <Button> Add to cart</Button>
                         </Card>
-                    </Grid>
+                    </div>
                 ))}
-            </Grid>
-            <div style={{ marginTop: '20px', display: 'flex', justifyContent: 'space-between' }}>
+            </div>
+
+            <div className="mt-6 flex justify-between items-center">
                 <Button disabled={page === 1} onClick={handlePreviousPage}>
                     Previous
                 </Button>

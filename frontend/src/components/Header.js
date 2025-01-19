@@ -1,27 +1,28 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, IconButton, Button } from '@mui/material';
+import { AppBar, Toolbar, Typography, IconButton, Button, Box } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Header = () => {
     return (
-        <AppBar position="static" color="primary">
+        <AppBar position="static" color="">
             <Toolbar>
                 <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                    <a href="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                        E-Commerce
+                    <a href="/about" style={{ textDecoration: 'none', color: 'inherit' }}>
+                        ShopWise
                     </a>
                 </Typography>
-                <Button color="inherit" href="/catalog">Catalog</Button>
-                <Button color="inherit" href="/categories">Categories</Button>
-                <Button color="inherit" href="/about">About Us</Button>
-                <Button color="inherit" href="/contact">Contact</Button>
-                <IconButton color="inherit" href="/cart">
-                    <ShoppingCartIcon />
-                </IconButton>
-                <IconButton color="inherit" href="/profile">
-                    <AccountCircleIcon />
-                </IconButton>
+                <Box className="flex gap-2">
+                    <Button color="" className="hover:text-white" href="/catalog">Catalog</Button>
+                    <Button color="" className="hover:text-white" href="/about">About Us</Button>
+                    <Button color="" className="hover:text-white" href="/contact">Contact</Button>
+                    <IconButton color="secondary" href="/cart">
+                        <ShoppingCartIcon />
+                    </IconButton>
+                    <IconButton color="secondary" href="/auth">
+                        <AccountCircleIcon />
+                    </IconButton>
+                </Box>
             </Toolbar>
         </AppBar>
     );
