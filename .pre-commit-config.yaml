@@ -1,0 +1,50 @@
+repos:
+  - repo: local
+    hooks:
+      # Black for Python formatting
+      - id: black
+        name: Black Formatter
+        entry: black
+        language: system
+        types: [python]
+        files: ^backend/
+
+      # isort for sorting Python imports
+      - id: isort
+        name: Import Sorter
+        entry: isort
+        language: system
+        types: [python]
+        files: ^backend/
+
+      # Flake8 for Python linting with max-line-length set to 100
+      - id: flake8
+        name: Flake8 Linter
+        entry: flake8 --max-line-length=100
+        language: system
+        types: [python]
+        files: ^backend/
+
+      # Pytest for Django be testing
+      - id: pytest-check
+        name: pytest-check
+        entry: pytest backend
+        language: system
+        pass_filenames: false
+        always_run: true
+
+      # ESLint for JavaScript and React
+      - id: eslint
+        name: ESLint
+        entry: bash -c "cd frontend && npm run lint"
+        language: system
+        types: [javascript, jsx]
+        files: ^frontend/
+
+      # Tailwind CSS linting via Stylelint
+      - id: tailwind-lint
+        name: Tailwind CSS Linter
+        entry: bash -c "cd frontend && npx stylelint '**/*.css' --fix"
+        language: system
+        files: ^frontend/.*\.css$
+

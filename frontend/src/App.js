@@ -13,7 +13,6 @@ import Checkout from './pages/Checkout.js';
 import OrderSuccess from './pages/OrderSuccess.js';
 import Profile from './pages/Profile.js';
 
-// Define the adjusted custom theme
 const theme = createTheme({
     palette: {
       primary: {
