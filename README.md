@@ -3,6 +3,7 @@
 
 Shopwise is a cutting-edge, full-stack e-commerce application built using **Django** for the backend and **React** with **TailwindCSS** for the frontend. It features secure authentication, product management, order processing, and a modern, responsive UI, designed to provide an exceptional user experience for both customers and administrators.
 
+![Image not found](./docu/fe_ss.jpg)
 ---
 
 ## Table of Contents
