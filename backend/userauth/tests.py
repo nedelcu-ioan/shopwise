@@ -6,7 +6,6 @@ from userauth.models import UserProfile
 
 
 class UserRegistrationTestCase(APITestCase):
-
     def test_user_registration(self):
         url = reverse("register")
         data = {
@@ -21,7 +20,6 @@ class UserRegistrationTestCase(APITestCase):
 
 
 class UserProfileTestCase(APITestCase):
-
     def setUp(self):
         self.user = User.objects.create_user(
             username="testuser", email="testuser@example.com", password="password123"
